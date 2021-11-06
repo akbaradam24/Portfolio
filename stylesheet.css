@@ -4,31 +4,62 @@
  
 }
 *{
-    margin: 0 auto;
+    margin: 0;
+    padding: 0;
 }
+body {
+    overflow-x: hidden;
+} 
+
 .Header {
 background-color: black;
 display: flex;
-justify-content: space-between;
+justify-content: space-around;
 flex-direction: row;
 position: fixed;
 width: 100%;
 flex-wrap: wrap;
+top: 0;
+z-index: 10;
+align-items: center;
 }
 .header-left{
     background-color: brown;
     padding: 15px;
     color: white;
+    animation-name: example;
+    animation-duration: 2s;
 }
+@keyframes example {
+    0% {color: white;}
+    50% {color: red;}
+    100% {color: white;}
+}
+
+
 
 
 .Headline h1 {
     font-size: 80px;
+    animation-name: headex;
+    animation:headex 5s linear 2s infinite alternate;
+   
+    
+}
+@keyframes headex {
+    0% {font-family: 'Courier New', Courier, monospace;}
+    20%{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
+    40%{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
+    60%{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
+    80%{font-family: Verdana, Geneva, Tahoma, sans-serif;}
+    100%{font-family: 'Courier New', Courier, monospace;}
+
 }
 
 .header-right {
-  margin-right: 32px; 
   color: white;
+  display: flex;
+  justify-content: space-between;
 }
 a {
     text-decoration: none;
@@ -36,23 +67,34 @@ a {
 }
 .header-right a {
     line-height: 20px;
-    padding: 24px;
+    padding: 30px 24px;
     margin: 2px;
-    float: left;
-    background-color: black;
+    flex-direction: row;
     transition: all 0.5s;
-    display: block;
+    
+    
 }
 
 .header-right a:hover {
     opacity: 1;
     background-color: gray;
 }
+.fa{
+    margin-right: 5px;
+}
+.menu-icon {
+    display: none;
+    color: white;
+    float: right;
+    font-size: 25px;
+    padding: 21px 0;
+}
 
 .Home {
 display: flex;
 justify-content: center;
 flex-wrap: wrap;
+align-items: center;
 }
 .Headline{
     background-color: black;
@@ -60,7 +102,8 @@ flex-wrap: wrap;
     color: white;
     background-image: url(./Assets/bg1.png);
     background-size: cover;
-    padding: 350px;
+    padding: 350px 350px;
+    height: 150px;
 }
 
 .About-me {
@@ -139,6 +182,7 @@ margin-left: 10px;
 display: flex;
 flex-direction: column;
 margin-top: 25px;
+align-items: center;
 }
 
 .Footer{
@@ -148,6 +192,7 @@ color: white;
 font-size: 5px;
 flex-direction: column;
 font-family: monospace;
+align-items: center;
 }
 input, textarea {
     width:250px;
@@ -165,3 +210,86 @@ input, textarea {
     background-color: black;
     color: white;
   }
+
+.menu-toggle {
+display: none;
+flex-direction: column;
+height: 20px;
+justify-content: space-between;
+position: relative;
+}
+.menu-toggle input{
+    position: absolute;
+    left: -6px;
+    top: -10px;
+    width: 40px;
+    height: 28px;
+    opacity: 0;
+    cursor: pointer;
+}
+.menu-toggle span {
+     display: block;
+     width: 28px;
+     height: 3px;
+     background-color: ghostwhite;
+     border-radius: 3px;
+     transition: all 0.5s;
+}
+
+/* hamburger menu animation*/
+.menu-toggle span:nth-child(2) {
+    transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+    transform-origin: 0 100%;
+}
+
+.menu-toggle input:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(-1px, 1px);
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(-1px, 0);
+
+}
+
+.menu-toggle input:checked ~ span:nth-child(3){
+    transform: scale(0);
+
+}
+
+
+  /* responsive Breakpoint */
+  @media screen and (max-width: 768px){
+    .header-right {
+        width: 50%;
+    }
+}
+
+
+
+
+
+@media screen and (max-width: 576px) {
+    .header-right {
+        position: absolute;
+        right: 0;
+        flex-direction: column;
+        background-color: black;
+        top: 0;
+        height: 100vh;
+        align-items: center;
+        justify-content: space-evenly;
+        z-index: -3;
+        transform: translateX(100%);
+        transition: all 1s;
+    }
+    .menu-toggle {
+        display: flex;
+    }
+    .header-right.slide {
+        transform: translateX(0);
+    }
+} 
