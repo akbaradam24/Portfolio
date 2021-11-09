@@ -46,15 +46,7 @@ align-items: center;
    
     
 }
-@keyframes headex {
-    0% {font-family: 'Courier New', Courier, monospace;}
-    20%{font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;}
-    40%{font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;}
-    60%{font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;}
-    80%{font-family: Verdana, Geneva, Tahoma, sans-serif;}
-    100%{font-family: 'Courier New', Courier, monospace;}
 
-}
 
 .header-right {
   color: white;
@@ -96,21 +88,12 @@ justify-content: center;
 flex-wrap: wrap;
 align-items: center;
 }
-.Headline{
-    background-color: black;
-    text-align: center;
-    color: white;
-    background-image: url(./Assets/bg1.png);
-    background-size: cover;
-    padding: 350px 350px;
-    height: 150px;
-}
+
 
 .About-me {
     display: flex;
     justify-content: center;
-    width: 100%;
-    height: 100%;
+    padding: 75px 75px;
 }
 .Am-left {
    margin-right: 0;
@@ -122,10 +105,11 @@ align-items: center;
    
 }
 .Work-Experience {
-    background-color: #494544;
+    
     display: flex;
     font-size: 14px;
     flex-wrap: wrap;
+    padding: 100px 0;
     
 }
 .title {
@@ -165,7 +149,7 @@ align-items: center;
     text-align: center;
 }
 .topEducation{
-    padding: 15px;
+    padding: 150px 0 0 0 ;
 }
 .Education{
 display: flex;
@@ -266,13 +250,36 @@ position: relative;
     .header-right {
         width: 50%;
     }
+    .Headline{
+        background-color: black;
+        text-align: center;
+        color: white;
+        background-image: url(./Assets/bg1.png);
+        background-size: cover;
+        padding: 300px 0;
+        height: 150px;
+    }
+    .Headline h1 {
+        font-size: 40px;
+    }
 }
 
 
 
 
 
-@media screen and (max-width: 576px) {
+@media screen and (min-width: 576px) {
+    .Headline{
+        background-color: black;
+        text-align: center;
+        color: white;
+        background-image: url(./Assets/bg1.png);
+        background-size: cover;
+        padding: 350px 350px;
+        height: 150px;
+    }
+}
+    @media screen and (max-width: 576px) {
     .header-right {
         position: absolute;
         right: 0;
@@ -288,8 +295,27 @@ position: relative;
     }
     .menu-toggle {
         display: flex;
+        
     }
     .header-right.slide {
         transform: translateX(0);
     }
+    .About-me {
+        display: flex;
+        justify-content: center;
+        padding: 25px 5px 5px 10px;
+    }
+    .Headline{
+        background-color: black;
+        text-align: center;
+        color: white;
+        background-image: url(./Assets/bg1.png);
+        background-size: cover;
+        padding: 350px 100px;
+        height: 150px;
+    }
+    .Headline h1 {
+        font-size: 40px;
+    }
+
 } 
