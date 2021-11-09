@@ -27,14 +27,9 @@ align-items: center;
     background-color: brown;
     padding: 15px;
     color: white;
-    animation-name: example;
-    animation-duration: 2s;
+    
 }
-@keyframes example {
-    0% {color: white;}
-    50% {color: red;}
-    100% {color: white;}
-}
+
 
 
 
@@ -43,10 +38,16 @@ align-items: center;
     font-size: 80px;
     animation-name: headex;
     animation:headex 5s linear 2s infinite alternate;
-   
-    
+    font-family: 'Cinzel Decorative';
+    animation-name: example;
+    animation-duration: 2s;
 }
 
+@keyframes example {
+    0% {color: white;}
+    50% {color: red;}
+    100% {color: white;}
+}
 
 .header-right {
   color: white;
@@ -248,16 +249,18 @@ position: relative;
   /* responsive Breakpoint */
   @media screen and (max-width: 768px){
     .header-right {
-        width: 50%;
+        display: flex;
+        flex-wrap: wrap;
     }
     .Headline{
         background-color: black;
         text-align: center;
-        color: white;
+        color: rgb(255, 255, 255);
         background-image: url(./Assets/bg1.png);
         background-size: cover;
         padding: 300px 0;
-        height: 150px;
+        display: flex;
+        flex-wrap: wrap;
     }
     .Headline h1 {
         font-size: 40px;
